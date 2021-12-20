@@ -1,0 +1,1 @@
+**Ở đây em dùng framework vuejs, vuex, vuex-persist, database no-sql mongodb và framework UI vuetify nha anh**
