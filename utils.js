@@ -20,6 +20,8 @@ exports.getUser = async function(username, password) {
       $and: [{ "email": { $eq: username } }, { "password": password }]
     });
 
+    console.log(`user is ${JSON.stringify(user, null, 2)}`)
+
     if(user && user.email == username && user.password == password) {
       return user
     }

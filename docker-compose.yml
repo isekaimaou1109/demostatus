@@ -1,0 +1,39 @@
+version: "3.9"
+
+services: 
+  web:
+    build: testapp/
+    container_name: "web"
+    hostname: "localhost"
+    expose:
+      - 8080
+    ports:
+      - "8080:8080"
+    networks: 
+      - my_network
+
+  server:
+    build: .
+    hostname: "localhost"
+    container_name: "server"
+    ports:
+      - "3000:3000"
+    networks: 
+      - my_network
+
+  mongodb:
+    image: "mongo:4.4"
+    container_name: "mongo"
+    restart: always
+    hostname: "mongo"
+    expose:
+      - 27017
+    ports:
+      - "27017:27017"
+    networks: 
+      - my_network
+
+networks: 
+  my_network:
+    driver: bridge
+

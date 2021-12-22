@@ -13,7 +13,8 @@ const loginRoute = require('./routes/login')
 const registerRoute = require('./routes/register')
 
 app.use(cors({
-  origin: "*"
+  origin: "*",
+  methods: ['GET', 'PUT', 'POST', 'PATCH', 'DELETE', 'OPTIONS']
 }))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
